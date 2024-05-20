@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link href="output.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+  <div class="w-full max-w-md p-4">
+    <h1 class="text-4xl font-bold text-center mb-8">TODO</h1>
+    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <input type="text" id="new-todo" placeholder="Create a new todo..." class="w-full p-2 mb-4 bg-gray-700 text-gray-300 rounded-lg outline-none">
+      <ul id="todo-list">
+        <!-- Tareas dinámicamente añadidas aquí -->
+      </ul>
+      <div class="flex justify-between items-center mt-4 text-gray-400">
+        <span id="items-left">0 items left</span>
+        <div class="flex space-x-4">
+          <button id="filter-all" class="hover:underline">All</button>
+          <button id="filter-active" class="hover:underline">Active</button>
+          <button id="filter-completed" class="hover:underline">Completed</button>
+        </div>
+        <button id="clear-completed" class="hover:underline">Clear Completed</button>
+        <button id="toggle-theme" class="hover:underline">Toggle Theme</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
