@@ -4,21 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo App</title>
-  <link href="output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Tailwind clases personalizadas para el fondo con degradado e imagen */
+    .gradient-bg {
+      background: linear-gradient(125deg, #3a5ae7 0%, #59258d 100%), 
+                  url('https://thumbs.dreamstime.com/z/pasillo-del-puente-31927568.jpg?ct=jpeg');
+      background-blend-mode: multiply;
+      background-size: cover;
+      height: 40%;
+    }
+    .dark .gradient-bg {
+      background: linear-gradient(100deg, #917fe2 0%, #702f8f 100%), 
+                  url('https://concepto.de/wp-content/uploads/2021/04/colina-e1618590170635.jpg');
+      background-blend-mode: multiply;
+      background-size: cover;
+    }
+    .bg-black-section {
+      background: black;
+      height: 60%;
+    }
+    .dark .bg-black-section {
+      background: white;
+    }
+    .bg-gray-800 {
+      background-color: #2d3748;
+    }
+    .dark .bg-gray-800 {
+      background-color: white;
+      color: black;
+    }
+    .dark .text-gray-400 {
+      color: black;
+    }
+    .dark input::placeholder {
+      color: black;
     }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-  <div class="w-full max-w-md p-4">
-    <h1 class="text-4xl font-bold text-center mb-8">TODO</h1>
-    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-      <input type="text" id="new-todo" placeholder="Create a new todo..." class="w-full p-2 mb-4 bg-gray-700 text-gray-300 rounded-lg outline-none">
-      <ul id="todo-list">
+<body class="flex items-center justify-center min-h-screen text-white">
+  <div class="absolute top-0 w-full gradient-bg"></div>
+  <div class="absolute bottom-0 w-full bg-black-section"></div>
+  <div class="relative w-full max-w-md p-4">
+    <!-- Contenedor del Título y el cambio de Tema  -->
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-4xl font-bold mb-4">T O D O</h1>
+      <button id="toggle-theme" class="text-gray-400 hover:text-gray-200">☀</button>
+    </div>
+    <!-- Contenedor de la entrada para nueva tarea -->
+    <div class="mb-4">
+      <input type="text" id="new-todo" placeholder="Currently typing" class="w-full p-2 bg-gray-700 text-gray-300 rounded-lg outline-none">
+    </div>
+    <!-- Contenedor de la lista de tareas -->
+    <div class="bg-gray-800 p-4 rounded-lg shadow-lg relative">
+      <ul id="todo-list" class="mb-4">
         <!-- Tareas dinámicamente añadidas aquí -->
       </ul>
+      <!-- Controles de filtro y limpieza -->
       <div class="flex justify-between items-center mt-4 text-gray-400">
         <span id="items-left">0 items left</span>
         <div class="flex space-x-4">
@@ -27,7 +69,6 @@
           <button id="filter-completed" class="hover:underline">Completed</button>
         </div>
         <button id="clear-completed" class="hover:underline">Clear Completed</button>
-        <button id="toggle-theme" class="hover:underline">Toggle Theme</button>
       </div>
     </div>
   </div>
