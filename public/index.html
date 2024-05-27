@@ -16,7 +16,9 @@
     }
     .dark .gradient-bg {
       background: linear-gradient(100deg, #6a50e2 0%, #8025aa 100%), 
-                  url('https://concepto.de/wp-content/uploads/2021/04/colina-e1618590170635.jpg');
+                  url('https://media.istockphoto.com/id/1488331581/es/foto/cabo-terrestre-primaveral-de-la-toscana-al-atardecer-val-dorcia-italia.jpg?s=1024x1024&w=is&k=20&c=8DDy9fYioojtg-gvz_YJX9FEKqQItgXbwbmkWW-Rkc8=');
+      background-blend-mode: overlay;
+      background-size: cover;
     }
     .bg-black-section {
       background: black;
@@ -48,15 +50,15 @@
   </style>
 </head>
 <body class="flex items-center justify-center min-h-screen text-white">
-  <div class="absolute top-0 w-full gradient-bg"></div>
-  <div class="absolute bottom-0 w-full bg-black-section"></div>
-  <div class="relative w-full max-w-md p-4">
-    <!-- Contenedor del Título y el cambio de Tema  -->
+  <div class="absolute top-0 w-full gradient-bg"></div>         <!--fondo degradado con imagen parte superior -->
+  <div class="absolute bottom-0 w-full bg-black-section"></div> <!--fondo negro parte inferior-->
+  <div class="relative w-full max-w-md p-4">  <!--centra el contenido de la pantalla ajusta y añade padding-->
+    <!-- Contenedor del Título y el cambio de Tema tailwind para alinear elementos -->
     <div class="flex justify-between items-center mb-4">
       <h1 class="text-4xl font-bold mb-4">T O D O</h1>
       <button id="toggle-theme" class="text-gray-400 hover:text-gray-200">☀</button>
     </div>
-    <!-- Contenedor de la entrada para nueva tarea -->
+    <!-- Contenedor de entrada para nueva tarea -->
     <div class="bg-gray-800 p-4 rounded-lg shadow-lg relative mb-4">
       <input type="text" id="new-todo" placeholder="Currently typing" class="w-full p-2 bg-gray-700 text-gray-300 rounded-lg outline-none">
     </div>
